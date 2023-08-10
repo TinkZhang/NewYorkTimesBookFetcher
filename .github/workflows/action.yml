@@ -1,0 +1,25 @@
+name: New York Times Best Seller Weekly Updater
+
+on:
+  schedule:
+    - cron: "5 8 * * 0"
+
+env:
+  TZ: Asia/Shanghai
+
+jobs:
+  NYT-book-update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Python3
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.x"
+      - name: Install requirements
+        run: |
+          python3 -m pip install --upgrade pip
+          pip3 install -r ./requirements.txt
+      - name: Run
+        run: python3 ./nyt-fetcher.py
