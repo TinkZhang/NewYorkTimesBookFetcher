@@ -1,6 +1,7 @@
 name: New York Times Best Seller Weekly Updater
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: "5 8 * * 0"
 
