@@ -15,7 +15,7 @@ db = firestore.client()
 
 # Fiction
 doc_ref = db.collection(u'Fictions')
-response = requests.get('https://api.nytimes.com/svc/books/v3/lists/current/combined-print-and-e-book-fiction.json?api-key='+sys.argv[0]).text
+response = requests.get('https://api.nytimes.com/svc/books/v3/lists/current/combined-print-and-e-book-fiction.json?api-key='+sys.argv[1]).text
 re = json.loads(response, object_hook=lambda d: SimpleNamespace(**d))
 print(re.results.published_date)
 books = re.results.books
@@ -47,7 +47,7 @@ for i in range(len(books)):
 # NonFiction
 doc_ref = db.collection(u'NonFictions')
 
-response = requests.get('https://api.nytimes.com/svc/books/v3/lists/current/combined-print-and-e-book-nonfiction.json?api-key='+sys.argv[0]).text
+response = requests.get('https://api.nytimes.com/svc/books/v3/lists/current/combined-print-and-e-book-nonfiction.json?api-key='+sys.argv[1]).text
 re = json.loads(response, object_hook=lambda d: SimpleNamespace(**d))
 print(re.results.published_date)
 books = re.results.books
