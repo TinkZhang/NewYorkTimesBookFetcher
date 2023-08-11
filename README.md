@@ -1,6 +1,7 @@
 # NewYorkTimesBookFetcher
 
 I have an Android App [ReadKeeper](https://play.google.com/store/apps/details?id=app.tinks.readkeeper). On the homepage, the best book sellers from New York Times is displayed.
+![image](/images/ny-book.png)
 
 This script is to fetch the data from New York Times API and store that in Firebase. And it runs by Github Action weekly.
 
