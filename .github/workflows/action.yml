@@ -27,7 +27,7 @@ jobs:
         uses: timheuer/base64-to-file@v1.2
         with:
           fileName: "firebaseKey.json"
-          fileFir: "./"
+          fileDir: "./"
           encodedString: ${{ secrets.FIREBASE_KEY }}
       - name: Run
         run: python3 ./nyt-fetcher.py ${{ secrets.NEW_YORK_TIMES_API_KEY}}
