@@ -6,7 +6,7 @@ from types import SimpleNamespace
 from firebase_admin import credentials
 from firebase_admin import firestore
 
-cred = credentials.Certificate("readkeeper-1322-firebase-adminsdk-vlxo8-25085b88e6.json")
+cred = credentials.Certificate("firebaseKey.json")
 firebase_admin.initialize_app(cred, {
     'projectId': "readkeeper-1322"
 })
